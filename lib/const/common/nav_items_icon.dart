@@ -7,15 +7,18 @@ class NavItemsIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 44,
-      width: 44,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: AppColors.green100,
-      ),
+    return InkWell(
+      onTap: () {},
+      child: Container(
+        height: 44,
+        width: 44,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: AppColors.green100,
+        ),
 
-      child: Icon(icon, size: 24, color: AppColors.green),
+        child: Icon(icon, size: 24, color: AppColors.green),
+      ),
     );
   }
 }

@@ -7,40 +7,36 @@ class ImageSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return   Stack(
-              children: [
-                Image.asset(
-                  "assets/images/classroom.jpg",
-                  height: 144,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Builder(
-                        builder: (context) => Align(
-                          alignment: Alignment.centerRight,
-                          child: InkWell(
-                            onTap: () {
-                              Scaffold.of(context).openEndDrawer();
-                            },
-                            child: Icon(
-                              Icons.menu,
-                              size: 24,
-                              color: AppColors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 8),
-                      StudentInfoSection(),
-                    ],
+    return Stack(
+      children: [
+        Image.asset(
+          "assets/images/classroom.jpg",
+          height: 144,
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0,vertical: 20),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Builder(
+                builder: (context) => Align(
+                  alignment: Alignment.centerRight,
+                  child: InkWell(
+                    onTap: () {
+                      Scaffold.of(context).openEndDrawer();
+                    },
+                    child: Icon(Icons.menu, size: 24, color: AppColors.white),
                   ),
                 ),
-              ],
-            );
+              ),
+              SizedBox(height: 8),
+              StudentInfoSection(),
+            ],
+          ),
+        ),
+      ],
+    );
   }
 }

@@ -11,35 +11,37 @@ class FeesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ImageSection(),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        Strings.fees,
-                        style: Styles.fonttext18Bold(AppColors.black),
-                      ),
-                      SizedBox(width: 14),
-                      Image.asset("assets/images/Arrow.png"),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-              
-                  FeeManagement(),
-                ],
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              ImageSection(),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          Strings.fees,
+                          style: Styles.fonttext18Bold(AppColors.black),
+                        ),
+                        SizedBox(width: 14),
+                        Image.asset("assets/images/Arrow.png"),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                
+                    FeeManagement(),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
+        bottomNavigationBar: BottomNavBarItem(),
       ),
-      bottomNavigationBar: BottomNavBarItem(),
     );
   }
 }
